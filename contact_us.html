@@ -74,7 +74,6 @@
     
         <button type="submit" class="btn btn-primary" onclick="display()">Submit</button>
       </form>
-      <p id="demo">" "</p>
 
       <script>
         
@@ -84,7 +83,6 @@
       var message= document.getElementById("message").value;
       console.log(name+" "+desc+" "+message);
       var str=name+" "+desc+" "+message;
-      document.getElementById("demo").innerHTML=str;
       if(name && desc && message){
         document.getElementById("alert1").style.display="block";
       }
