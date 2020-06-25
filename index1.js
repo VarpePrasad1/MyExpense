@@ -5,20 +5,24 @@ function ShowTable(){
     amount=document.getElementById("amount").value;
     amount=parseInt(amount, 10);
     var today = new Date();
-    if(today.getHours()>12){
-        window.time;
-        let hour=today.getHours()-12;
-        if(hour<10){
-            time = "0"+hour + ":" + minute(today) + ":" + second(today)+ " PM";   
-        }
-        else{
-            time = hour + ":" + minute(today)+ ":" + second(today)+ " PM";   
-        }
+    if(today.getHours()<10){         //new added
+        time = "0"+today.getHours() + ":" + minute(today) + ":" + second(today)+ " AM";   
     }
     else{
-        time = today.getHours() + ":" + minute(today) + ":" + second(today)+ " AM";   
+        if(today.getHours()>12){
+            window.time;
+            let hour=today.getHours()-12;
+            if(hour<10){
+                time = "0"+hour + ":" + minute(today) + ":" + second(today)+ " PM";   
+            }
+            else{
+                time = hour + ":" + minute(today)+ ":" + second(today)+ " PM";   
+            }
+        }
+        else{
+            time = today.getHours() + ":" + minute(today) + ":" + second(today)+ " AM";   
+        }
     }
-
     if(!desc || !amount){
         alert("Please Fill All Details");
         return;
